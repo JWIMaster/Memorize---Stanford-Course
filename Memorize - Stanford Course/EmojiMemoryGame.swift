@@ -14,7 +14,7 @@ class EmojiMemoryGame: ObservableObject {
     
     //This function creates a memory game. The function asks to return an object of type MemoryGame, which we defined in our model's struct
     private static func createMemoryGame() -> MemoryGame<String> {
-        return MemoryGame<String>(numberOfPairsOfCards: 4, cardContentFactory: { pairIndex in
+        return MemoryGame<String>(numberOfPairsOfCards: 8, cardContentFactory: { pairIndex in
             return emojis[pairIndex]
         }
         )
@@ -25,6 +25,10 @@ class EmojiMemoryGame: ObservableObject {
     
     var cards: [MemoryGame<String>.Card] {
         return model.cards
+    }
+    
+    var score: Int {
+        model.score
     }
     //MARK: - Intents
     
